@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - ShopZone</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">ShopZone</a>
+    <ul class="nav-links">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li id="auth-links"></li>
+    </ul>
+  </nav>
+
+  <div class="auth-container">
+    <h2>Register</h2>
+    <div id="msg"></div>
+    <form id="register-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="6" placeholder="Min 6 characters">
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <div class="link">Already have an account? <a href="login.html">Login</a></div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

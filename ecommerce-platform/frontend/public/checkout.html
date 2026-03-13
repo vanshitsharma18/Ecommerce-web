@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - ShopZone</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">ShopZone</a>
+    <ul class="nav-links">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li id="auth-links"></li>
+    </ul>
+  </nav>
+
+  <div class="container" id="checkout-page">
+    <h1 class="page-title">Checkout</h1>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="cart-body">
+        <tr><td colspan="5" class="empty-state">Loading...</td></tr>
+      </tbody>
+    </table>
+    <div id="cart-summary" class="cart-summary"></div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - ShopZone</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/product.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">ShopZone</a>
+    <ul class="nav-links">
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li id="auth-links"></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1 class="page-title">Products</h1>
+    <div id="products-grid" class="products-grid">
+      <div class="empty-state">Loading products...</div>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/products.js"></script>
+</body>
+</html>

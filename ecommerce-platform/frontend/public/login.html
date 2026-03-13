@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ShopZone</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">ShopZone</a>
+    <ul class="nav-links">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li id="auth-links"></li>
+    </ul>
+  </nav>
+
+  <div class="auth-container">
+    <h2>Login</h2>
+    <div id="msg"></div>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required placeholder="Enter password">
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <div class="link">Don't have an account? <a href="register.html">Register</a></div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
