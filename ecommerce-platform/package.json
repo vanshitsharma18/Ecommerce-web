@@ -1,0 +1,18 @@
+{
+	"name": "ecommerce-platform-workspace",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Workspace scripts for running ecommerce microservices",
+	"scripts": {
+		"install:all": "npm install --prefix api-gateway && npm install --prefix services/user-service && npm install --prefix services/product-service && npm install --prefix services/cart-service && npm install --prefix services/order-service && npm install --prefix services/payment-service",
+		"dev": "concurrently -k -n gateway,user,product,cart,order,payment,frontend -c yellow,cyan,green,blue,magenta,red,white \"npm run dev --prefix api-gateway\" \"npm run dev --prefix services/user-service\" \"npm run dev --prefix services/product-service\" \"npm run dev --prefix services/cart-service\" \"npm run dev --prefix services/order-service\" \"npm run dev --prefix services/payment-service\" \"http-server frontend -p 8080 -c-1\"",
+		"start": "concurrently -k -n gateway,user,product,cart,order,payment,frontend -c yellow,cyan,green,blue,magenta,red,white \"npm run start --prefix api-gateway\" \"npm run start --prefix services/user-service\" \"npm run start --prefix services/product-service\" \"npm run start --prefix services/cart-service\" \"npm run start --prefix services/order-service\" \"npm run start --prefix services/payment-service\" \"http-server frontend -p 8080 -c-1\"",
+		"seed": "node services/product-service/seed.js",
+		"docker:up": "docker compose -f infrastructure/docker-compose.yml up --build",
+		"docker:down": "docker compose -f infrastructure/docker-compose.yml down"
+	},
+	"devDependencies": {
+		"concurrently": "^9.0.1",
+		"http-server": "^14.1.1"
+	}
+}

@@ -257,6 +257,39 @@ Built with **plain HTML, CSS, and JavaScript**. No frameworks (React, Vue, etc.)
 
 ### Steps
 
+#### Option A: One command (local Node.js)
+
+```bash
+# From Ecommerce-web/ecommerce-platform
+npm install
+npm run install:all
+
+# Start MongoDB (if not already running)
+docker run -d --name mongodb -p 27017:27017 mongo:latest
+
+# Start gateway + all 5 services + frontend in one terminal
+npm run dev
+
+# In another terminal, seed products once
+npm run seed
+
+# Open frontend
+# http://localhost:8080/public/index.html
+```
+
+#### Option B: One command (Docker Compose)
+
+```bash
+# From Ecommerce-web/ecommerce-platform
+npm install
+npm run docker:up
+
+# Open frontend
+# http://localhost:8080/index.html
+```
+
+#### Option C: Manual multi-terminal setup
+
 ```bash
 # 1. Start MongoDB
 docker run -d --name mongodb -p 27017:27017 mongo:latest
@@ -275,7 +308,7 @@ cd services/product-service && node src/app.js    # port 3002
 cd services/cart-service && node src/app.js       # port 3003
 cd services/order-service && node src/app.js      # port 3004
 cd services/payment-service && node src/app.js    # port 3005
-cd api-gateway && node src/server.js              # port 3000
+cd api-gateway && node src/app.js                 # port 3000
 
 # 4. Seed products
 cd services/product-service && node seed.js
